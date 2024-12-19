@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase'
-import { FirebaseError } from 'firebase/app'
+import '../sign-Up/signUp.scss'
 import FormInput from '../Form-input/FormInput'
+import Button from '../Button/Button'
 
 function SIgnUp() {
 
@@ -47,14 +48,15 @@ function SIgnUp() {
 
 
     return (
-        <div>
-            <h1>sign-up with your email and password</h1>
+        <div className='sign-up-container'>
+            <h2>Don't have an account?</h2>
+            <span>sign-up with your email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput type="text" label={"Display Name"} required onChange={handleChange} name='displayName' value={displayName} />
                 <FormInput type="email" label={"Email"} required onChange={handleChange} name='email' value={email} />
                 <FormInput type="password" label={"Password"} required onChange={handleChange} name='password' value={password} />
                 <FormInput type="password" label={"Confirm Password"} required onChange={handleChange} name='confirmPassword' value={confirmPassword} />
-                <button type='submit'>Sign-Up</button>
+                <Button  type='submit'>Sign-Up</Button>
             </form>
         </div>
     )
